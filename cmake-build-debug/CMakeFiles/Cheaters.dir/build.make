@@ -70,17 +70,62 @@ CMakeFiles/Cheaters.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cheaters.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caleb/Documents/EE312/Cheaters/main.cpp -o CMakeFiles/Cheaters.dir/main.cpp.s
 
+CMakeFiles/Cheaters.dir/getFileNames.cpp.o: CMakeFiles/Cheaters.dir/flags.make
+CMakeFiles/Cheaters.dir/getFileNames.cpp.o: ../getFileNames.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caleb/Documents/EE312/Cheaters/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Cheaters.dir/getFileNames.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Cheaters.dir/getFileNames.cpp.o -c /home/caleb/Documents/EE312/Cheaters/getFileNames.cpp
+
+CMakeFiles/Cheaters.dir/getFileNames.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cheaters.dir/getFileNames.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caleb/Documents/EE312/Cheaters/getFileNames.cpp > CMakeFiles/Cheaters.dir/getFileNames.cpp.i
+
+CMakeFiles/Cheaters.dir/getFileNames.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cheaters.dir/getFileNames.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caleb/Documents/EE312/Cheaters/getFileNames.cpp -o CMakeFiles/Cheaters.dir/getFileNames.cpp.s
+
+CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o: CMakeFiles/Cheaters.dir/flags.make
+CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o: ../plagiarismCatcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caleb/Documents/EE312/Cheaters/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o -c /home/caleb/Documents/EE312/Cheaters/plagiarismCatcher.cpp
+
+CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caleb/Documents/EE312/Cheaters/plagiarismCatcher.cpp > CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.i
+
+CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caleb/Documents/EE312/Cheaters/plagiarismCatcher.cpp -o CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.s
+
+CMakeFiles/Cheaters.dir/FileChunks.cpp.o: CMakeFiles/Cheaters.dir/flags.make
+CMakeFiles/Cheaters.dir/FileChunks.cpp.o: ../FileChunks.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caleb/Documents/EE312/Cheaters/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Cheaters.dir/FileChunks.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Cheaters.dir/FileChunks.cpp.o -c /home/caleb/Documents/EE312/Cheaters/FileChunks.cpp
+
+CMakeFiles/Cheaters.dir/FileChunks.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cheaters.dir/FileChunks.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caleb/Documents/EE312/Cheaters/FileChunks.cpp > CMakeFiles/Cheaters.dir/FileChunks.cpp.i
+
+CMakeFiles/Cheaters.dir/FileChunks.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cheaters.dir/FileChunks.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caleb/Documents/EE312/Cheaters/FileChunks.cpp -o CMakeFiles/Cheaters.dir/FileChunks.cpp.s
+
 # Object files for target Cheaters
 Cheaters_OBJECTS = \
-"CMakeFiles/Cheaters.dir/main.cpp.o"
+"CMakeFiles/Cheaters.dir/main.cpp.o" \
+"CMakeFiles/Cheaters.dir/getFileNames.cpp.o" \
+"CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o" \
+"CMakeFiles/Cheaters.dir/FileChunks.cpp.o"
 
 # External object files for target Cheaters
 Cheaters_EXTERNAL_OBJECTS =
 
 Cheaters: CMakeFiles/Cheaters.dir/main.cpp.o
+Cheaters: CMakeFiles/Cheaters.dir/getFileNames.cpp.o
+Cheaters: CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o
+Cheaters: CMakeFiles/Cheaters.dir/FileChunks.cpp.o
 Cheaters: CMakeFiles/Cheaters.dir/build.make
 Cheaters: CMakeFiles/Cheaters.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caleb/Documents/EE312/Cheaters/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Cheaters"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caleb/Documents/EE312/Cheaters/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Cheaters"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Cheaters.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

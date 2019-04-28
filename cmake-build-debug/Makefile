@@ -123,6 +123,60 @@ Cheaters/fast:
 	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/build
 .PHONY : Cheaters/fast
 
+FileChunks.o: FileChunks.cpp.o
+
+.PHONY : FileChunks.o
+
+# target to build an object file
+FileChunks.cpp.o:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/FileChunks.cpp.o
+.PHONY : FileChunks.cpp.o
+
+FileChunks.i: FileChunks.cpp.i
+
+.PHONY : FileChunks.i
+
+# target to preprocess a source file
+FileChunks.cpp.i:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/FileChunks.cpp.i
+.PHONY : FileChunks.cpp.i
+
+FileChunks.s: FileChunks.cpp.s
+
+.PHONY : FileChunks.s
+
+# target to generate assembly for a file
+FileChunks.cpp.s:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/FileChunks.cpp.s
+.PHONY : FileChunks.cpp.s
+
+getFileNames.o: getFileNames.cpp.o
+
+.PHONY : getFileNames.o
+
+# target to build an object file
+getFileNames.cpp.o:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/getFileNames.cpp.o
+.PHONY : getFileNames.cpp.o
+
+getFileNames.i: getFileNames.cpp.i
+
+.PHONY : getFileNames.i
+
+# target to preprocess a source file
+getFileNames.cpp.i:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/getFileNames.cpp.i
+.PHONY : getFileNames.cpp.i
+
+getFileNames.s: getFileNames.cpp.s
+
+.PHONY : getFileNames.s
+
+# target to generate assembly for a file
+getFileNames.cpp.s:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/getFileNames.cpp.s
+.PHONY : getFileNames.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +204,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+plagiarismCatcher.o: plagiarismCatcher.cpp.o
+
+.PHONY : plagiarismCatcher.o
+
+# target to build an object file
+plagiarismCatcher.cpp.o:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o
+.PHONY : plagiarismCatcher.cpp.o
+
+plagiarismCatcher.i: plagiarismCatcher.cpp.i
+
+.PHONY : plagiarismCatcher.i
+
+# target to preprocess a source file
+plagiarismCatcher.cpp.i:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.i
+.PHONY : plagiarismCatcher.cpp.i
+
+plagiarismCatcher.s: plagiarismCatcher.cpp.s
+
+.PHONY : plagiarismCatcher.s
+
+# target to generate assembly for a file
+plagiarismCatcher.cpp.s:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.s
+.PHONY : plagiarismCatcher.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Cheaters"
 	@echo "... edit_cache"
+	@echo "... FileChunks.o"
+	@echo "... FileChunks.i"
+	@echo "... FileChunks.s"
+	@echo "... getFileNames.o"
+	@echo "... getFileNames.i"
+	@echo "... getFileNames.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... plagiarismCatcher.o"
+	@echo "... plagiarismCatcher.i"
+	@echo "... plagiarismCatcher.s"
 .PHONY : help
 
 

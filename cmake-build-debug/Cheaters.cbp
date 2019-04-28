@@ -84,7 +84,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/FileChunks.cpp">
+			<Option target="Cheaters"/>
+		</Unit>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/FileChunks.h">
+			<Option target="Cheaters"/>
+		</Unit>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/getFileNames.cpp">
+			<Option target="Cheaters"/>
+		</Unit>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/getFileNames.h">
+			<Option target="Cheaters"/>
+		</Unit>
 		<Unit filename="/home/caleb/Documents/EE312/Cheaters/main.cpp">
+			<Option target="Cheaters"/>
+		</Unit>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/plagiarismCatcher.cpp">
+			<Option target="Cheaters"/>
+		</Unit>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/plagiarismCatcher.h">
 			<Option target="Cheaters"/>
 		</Unit>
 		<Unit filename="/home/caleb/Documents/EE312/Cheaters/CMakeLists.txt">

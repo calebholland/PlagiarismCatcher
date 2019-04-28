@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Cheaters.dir/main.cpp.o  -o Cheaters 
+/usr/bin/c++  -g   CMakeFiles/Cheaters.dir/main.cpp.o CMakeFiles/Cheaters.dir/getFileNames.cpp.o CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o CMakeFiles/Cheaters.dir/FileChunks.cpp.o  -o Cheaters 
