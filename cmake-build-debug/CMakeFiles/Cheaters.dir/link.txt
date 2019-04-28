@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Cheaters.dir/main.cpp.o  -o Cheaters 
