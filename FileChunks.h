@@ -22,14 +22,12 @@ public:
 
     FileChunks();
     FileChunks(string direcName, string fileName, int n);
-    int openFile(string fileName);
-    int makeFileString(string &fileString);
-    //void makeChunks(int )
-    void replaceCaps(string &currentChunk);
-    void rmNonAscii(string &currentChunk);
-
 
     void outWordsVec();
+    void outChunksVec();
+    string getFileName();
+    const vector<string> &getChunksRef();
+
 
 
 
@@ -40,7 +38,13 @@ private:
     vector <string> chunks;
     vector <string> words;
     string currentChunk;
-    string fileString;
+    string fileName;
+    //string fileString;
+    void replaceCaps(string &currentWord);
+    void rmNonAscii(string &currentWord);
+    //int openFile(string fileName);
+    //int makeFileString(string &fileString);
+    void makeChunks(int n);
 
 
 

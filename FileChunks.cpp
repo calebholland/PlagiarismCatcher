@@ -19,28 +19,74 @@ using namespace std;
         cout << "error: provide inputs " <<endl;
     }
 
-    FileChunks::FileChunks(string direcName, string fileName, int n){
+    FileChunks::FileChunks(string direcName, string _fileName, int n){
 
-        string wd = "/" + direcName + "/" + fileName;
+        string wd = direcName + "/" + _fileName;
         string temp;
         ifstream currentFile;
-        //currentFile.open(wd);
-        currentFile.open("test.txt");
-        while(currentFile) {
+        currentFile.open(wd);
+        //currentFile.open("test.txt");
+        while(currentFile) {   //---------------ASK - why this inputs the last word twice? or does it?
             currentFile >> temp;
-            words.push_back(temp);
+            replaceCaps(temp);
+            rmNonAscii(temp);
+            if(!temp.empty()){
+                words.push_back(temp);
+            }
         }
-        //currentFile >> temp;
-        //currentFile >> temp;
-
-        //cout << temp <<endl;
-        //words.push_back(temp);
-
+        makeChunks(n);
+        fileName = _fileName;
 
     }
+
+    string FileChunks::getFileName() {
+        return fileName;
+    }
+
+    const vector<string>& FileChunks::getChunksRef() {
+        return chunks;
+    }
+
+    void FileChunks::makeChunks(int n) {
+        for (vector<string>::const_iterator it = words.begin(); it != (words.end() -n); it++) {
+            for(int j = 0; j<n; j++){
+                currentChunk += (*(it + j));
+            }
+            chunks.push_back(currentChunk);
+            currentChunk = "";
+        }
+    }
+
+    void FileChunks::rmNonAscii(string &currentWord) {
+        string::size_type it = 0;
+        while(it < currentWord.length()){
+            if( (currentWord[it] < 97) || (currentWord[it] > 122) ){
+                currentWord.erase(it, 1);
+            }
+            else {
+                it++;
+            }
+        }
+    }
+
+    void FileChunks::replaceCaps(string &currentWord) {
+        locale local;
+        for(string::size_type it = 0; it < currentWord.length(); it++){
+            currentWord[it] = tolower(currentWord[it], local);
+        }
+    }
+
 
     void FileChunks::outWordsVec() {
-        for (vector<string>::const_iterator it = words.begin(); it != words.end(); it++) {
-            cout << *it;
+        for (vector<string>::const_iterator it = words.begin(); it != words.end()-1; it++) {
+            cout << *it << endl;
         }
     }
+
+    void FileChunks::outChunksVec() {
+        for (vector<string>::const_iterator it = chunks.begin(); it != chunks.end(); it++) {
+           cout << *it << endl;
+        }
+    }
+
+
