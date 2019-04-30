@@ -21,11 +21,12 @@ class FileChunks {
 public:
 
     FileChunks();
-    FileChunks(string direcName, string fileName, int n);
+    FileChunks(string direcName, string fileName, int i, int n);
 
     void outWordsVec();
     void outChunksVec();
     string getFileName();
+    int getFileIdx();
     const vector<string> &getChunksRef();
 
 
@@ -39,12 +40,13 @@ private:
     vector <string> words;
     string currentChunk;
     string fileName;
+    int fileIdx;
     //string fileString;
     void replaceCaps(string &currentWord);
     void rmNonAscii(string &currentWord);
     //int openFile(string fileName);
     //int makeFileString(string &fileString);
-    void makeChunks(int n);
+    void makeChunks(int i, int n);
 
 
 

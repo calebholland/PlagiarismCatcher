@@ -17,7 +17,6 @@
 using namespace std;
 
 int main() {
-    //std::cout << "Hello, World!" << std::endl;
 
     //Change the below to use argv(s)
     string dir = string("sm_doc_set");
@@ -40,15 +39,47 @@ int main() {
 //    cout<< files[0] <<endl;
 
     vector<FileChunks> allChunkedVec;
-    for (vector<string>::const_iterator it = files.begin(); it != (files.end()); it++) {
-        allChunkedVec.push_back(FileChunks(dir, *it, n));
+    struct hashNode{
+        int fileIdx;
+        int* next;
+    };
+    hashNode* hashTable[1000000];
+
+    //for (vector<string>::const_iterator it = files.begin(); it != (files.end()); it++) {
+    for(int i = 0; i < files.size(); i++){
+        //allChunkedVec.push_back(FileChunks(dir, *it, i, n));
+        allChunkedVec.push_back(FileChunks(dir, files[i], i, n));
     }
 
+    //hashNode* temp = new hashNode{i, NULL};
+    //hashTable[i] = temp;
+    int tempIdx = 0;
+    //int fileIdx = 0;
+    for (vector<FileChunks>::iterator it = allChunkedVec.begin(); it != (allChunkedVec.end()); it++) {
+        vector<string> chunks = (*it).getChunksRef();
+        //fileIdx = (*it).getFileIdx();
+        for(vector<string>::iterator it2 = chunks.begin(); it2 != (chunks.end()); it2++){
+            hashNode* temp = new hashNode{(*it).getFileIdx(), NULL};
+            //Replace the below with the hashing function (modify from notes, summing fct)
+            hashTable[tempIdx] = temp;
+            tempIdx++;
+        }
+
+        //cout << endl <<"-------------------------------------------------------------------------" <<endl<<endl;
+    }
+
+    for(int i = 0; i< 40000; i++){
+        cout << hashTable[i]->fileIdx << endl;
+    }
+
+
+
+    /*
     for (vector<FileChunks>::iterator it = allChunkedVec.begin(); it != (allChunkedVec.end()); it++) {
         (*it).outChunksVec();
         cout << endl <<"-------------------------------------------------------------------------" <<endl<<endl;
     }
-
+*/
 //    FileChunks chunk1 = FileChunks(dir, files[0], n);
 //    chunk1.outWordsVec();
 //    cout << endl <<endl;

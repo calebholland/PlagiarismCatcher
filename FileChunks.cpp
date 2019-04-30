@@ -19,7 +19,7 @@ using namespace std;
         cout << "error: provide inputs " <<endl;
     }
 
-    FileChunks::FileChunks(string direcName, string _fileName, int n){
+    FileChunks::FileChunks(string direcName, string _fileName, int i, int n){
 
         string wd = direcName + "/" + _fileName;
         string temp;
@@ -34,8 +34,9 @@ using namespace std;
                 words.push_back(temp);
             }
         }
-        makeChunks(n);
+        makeChunks(i,n);
         fileName = _fileName;
+        fileIdx = i;
 
     }
 
@@ -43,16 +44,22 @@ using namespace std;
         return fileName;
     }
 
+    int FileChunks::getFileIdx() {
+        return fileIdx;
+    }
+
     const vector<string>& FileChunks::getChunksRef() {
         return chunks;
     }
 
-    void FileChunks::makeChunks(int n) {
+    void FileChunks::makeChunks(int i, int n) {
         for (vector<string>::const_iterator it = words.begin(); it != (words.end() -n); it++) {
             for(int j = 0; j<n; j++){
                 currentChunk += (*(it + j));
             }
             chunks.push_back(currentChunk);
+            //hashNode* temp = new hashNode{i, NULL};
+            //hashTable[i] = temp;
             currentChunk = "";
         }
     }
@@ -85,7 +92,7 @@ using namespace std;
 
     void FileChunks::outChunksVec() {
         for (vector<string>::const_iterator it = chunks.begin(); it != chunks.end(); it++) {
-           cout << *it << endl;
+           cout << fileIdx << " : " << *it << endl;
         }
     }
 
