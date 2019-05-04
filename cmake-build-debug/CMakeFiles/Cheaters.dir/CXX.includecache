@@ -51,6 +51,8 @@ vector
 -
 string
 -
+math.h
+-
 getFileNames.h
 /home/caleb/Documents/EE312/Cheaters/getFileNames.h
 FileChunks.h
