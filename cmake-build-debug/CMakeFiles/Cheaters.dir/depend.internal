@@ -4,6 +4,9 @@
 CMakeFiles/Cheaters.dir/FileChunks.cpp.o
  /home/caleb/Documents/EE312/Cheaters/FileChunks.cpp
  /home/caleb/Documents/EE312/Cheaters/FileChunks.h
+CMakeFiles/Cheaters.dir/Output.cpp.o
+ /home/caleb/Documents/EE312/Cheaters/Output.cpp
+ /home/caleb/Documents/EE312/Cheaters/Output.h
 CMakeFiles/Cheaters.dir/getFileNames.cpp.o
  /home/caleb/Documents/EE312/Cheaters/getFileNames.cpp
 CMakeFiles/Cheaters.dir/main.cpp.o
@@ -11,6 +14,7 @@ CMakeFiles/Cheaters.dir/main.cpp.o
  /home/caleb/Documents/EE312/Cheaters/main.cpp
 CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o
  /home/caleb/Documents/EE312/Cheaters/FileChunks.h
+ /home/caleb/Documents/EE312/Cheaters/Output.h
  /home/caleb/Documents/EE312/Cheaters/getFileNames.h
  /home/caleb/Documents/EE312/Cheaters/plagiarismCatcher.cpp
  /home/caleb/Documents/EE312/Cheaters/plagiarismCatcher.h

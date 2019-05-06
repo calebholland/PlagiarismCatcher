@@ -90,6 +90,12 @@
 		<Unit filename="/home/caleb/Documents/EE312/Cheaters/FileChunks.h">
 			<Option target="Cheaters"/>
 		</Unit>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/Output.cpp">
+			<Option target="Cheaters"/>
+		</Unit>
+		<Unit filename="/home/caleb/Documents/EE312/Cheaters/Output.h">
+			<Option target="Cheaters"/>
+		</Unit>
 		<Unit filename="/home/caleb/Documents/EE312/Cheaters/getFileNames.cpp">
 			<Option target="Cheaters"/>
 		</Unit>

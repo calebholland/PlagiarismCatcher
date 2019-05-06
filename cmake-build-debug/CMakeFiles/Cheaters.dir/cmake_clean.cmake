@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Cheaters.dir/getFileNames.cpp.o"
   "CMakeFiles/Cheaters.dir/plagiarismCatcher.cpp.o"
   "CMakeFiles/Cheaters.dir/FileChunks.cpp.o"
+  "CMakeFiles/Cheaters.dir/Output.cpp.o"
   "Cheaters.pdb"
   "Cheaters"
 )

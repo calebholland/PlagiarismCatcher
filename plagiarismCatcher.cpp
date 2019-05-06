@@ -11,9 +11,14 @@
 #include <vector>
 #include <string>
 #include <math.h>
+#include <cstring>
+#include <algorithm>
+#include <cstdlib>
+
 
 #include "getFileNames.h"
 #include "FileChunks.h"
+#include "Output.h"
 
 using namespace std;
 
@@ -21,22 +26,37 @@ unsigned long hashing(string hashChunk);
 
 unsigned long idx2D(int file1, int file2, const vector<string> &files);
 
-int main() {
-
+int main(int argc, char *argv[]) {
+//int main() {
     //Change the below to use argv(s)
-    int n = 6;
-    string dir = string("user_doc_set");
+
+    /*
+    const int n = 6;
+    string dir = string("big_doc_set");
+    const int similarities = 100;
+*/
+
+
+
+    char dir[300] = {0};
+    strcpy(dir,argv[1]);
+    const int n = atoi(argv[2]);
+    const int similarities = atoi(argv[3]);
+
 
 
     vector<string> files = vector<string>();
 
     getdir(dir, files);
 
-    for (vector<string>::const_iterator it = files.begin(); it != files.end(); it++) {
-        if ((*it) == "." || *it == "..") {
+    for (vector<string>::iterator it = files.begin(); it != files.end(); it++) {
+        if ((*it) == "." || (*it) == ".." || (*it) == ".DS_Store") {
             files.erase(it);
-            if ((*it) == "." || *it == "..") {
+            if ((*it) == "." || (*it) == ".." || (*it) == ".DS_Store") {
                 files.erase(it);
+                if ((*it) == "." || (*it) == ".." || (*it) == ".DS_Store") {
+                    files.erase(it);
+                }
             }
         }
     }
@@ -130,21 +150,75 @@ int main() {
             }
         }
     }
+    /*
+    for(int i = 0; i < (files.size())*(files.size()); i++){
+        cout << twoDArray[i] << endl;
+    }
+    int sizex= files.size();
+
+*/
 
 
 
 
-    for(int i = 0; i < files.size() -1; i++){
-        for( int j = 0; j <files.size() -1; j++){
-            if(twoDArray[idx2D(i, j, files)]>4){
+/*
+    for(int i = 0; i < files.size() ; i++){
+        for( int j = 0; j <files.size() ; j++){
+            if(twoDArray[idx2D(i, j, files)]> similarities){
                 cout << twoDArray[idx2D(i, j, files)] << ": " << files[i] << ", " << files[j] << endl;
             }
         }
     }
 
+*/
+
+    vector <Output> outVec;
+
+    for(int i = 0; i < files.size() ; i++){
+        for( int j = 0; j <files.size() ; j++){
+            if(twoDArray[idx2D(i, j, files)]> similarities){
+                outVec.push_back( Output( twoDArray[idx2D(i, j, files)], files[i], files[j]));
+            }
+        }
+    }
+
+    for (vector<Output>::iterator it = outVec.begin(); it != (outVec.end()); it++) {
+        cout << (*it).getCollisions() << ": " << (*it).getFile1() << ", " << (*it).getFile2() << endl;
+    }
+
+    cout <<endl <<endl<<endl;
+
+    while(outVec.size() != 0) {
+        Output largest = outVec[0];
+        vector<Output>::iterator iter = outVec.begin();
+        for (vector<Output>::iterator it = outVec.begin(); it != (outVec.end()); it++) {
+            if ((*it) > largest) {
+                largest = (*it);
+                iter = it;
+            }
+        }
+        cout << (*iter).getCollisions() << ": " << (*iter).getFile1() << ", " << (*iter).getFile2() << endl;
+        outVec.erase(iter);
+    }
 
 
 
+
+
+/*
+
+    outVec.push_back(Output(23, "ajslkfdj", "jkljaklj"));
+    outVec.push_back(Output(3, "ajslkfdj", "jkljaklj"));
+    outVec.push_back(Output(40, "ajslkfdj", "jkljaklj"));
+
+    for(int i = 0; i< 3; i++){
+        cout << outVec[i].getCollisions() << ": " << outVec[i].getFile1() << ", " << outVec[i].getFile2() << endl;
+    }
+
+    */
+
+
+    //sort(outVec, outVec.size()/*, greater<Output>()*/);
 
 
 

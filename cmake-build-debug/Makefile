@@ -150,6 +150,33 @@ FileChunks.cpp.s:
 	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/FileChunks.cpp.s
 .PHONY : FileChunks.cpp.s
 
+Output.o: Output.cpp.o
+
+.PHONY : Output.o
+
+# target to build an object file
+Output.cpp.o:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/Output.cpp.o
+.PHONY : Output.cpp.o
+
+Output.i: Output.cpp.i
+
+.PHONY : Output.i
+
+# target to preprocess a source file
+Output.cpp.i:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/Output.cpp.i
+.PHONY : Output.cpp.i
+
+Output.s: Output.cpp.s
+
+.PHONY : Output.s
+
+# target to generate assembly for a file
+Output.cpp.s:
+	$(MAKE) -f CMakeFiles/Cheaters.dir/build.make CMakeFiles/Cheaters.dir/Output.cpp.s
+.PHONY : Output.cpp.s
+
 getFileNames.o: getFileNames.cpp.o
 
 .PHONY : getFileNames.o
@@ -243,6 +270,9 @@ help:
 	@echo "... FileChunks.o"
 	@echo "... FileChunks.i"
 	@echo "... FileChunks.s"
+	@echo "... Output.o"
+	@echo "... Output.i"
+	@echo "... Output.s"
 	@echo "... getFileNames.o"
 	@echo "... getFileNames.i"
 	@echo "... getFileNames.s"
