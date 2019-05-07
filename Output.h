@@ -19,6 +19,7 @@ class Output {
 
 public:
 
+    //Overloads the operators for the desired output format. Purpose: to print the list of cheaters in order.
     Output();
     Output(int _collisions, string _file1, string _file2);
     bool operator >(Output const &rhs);

@@ -25,8 +25,8 @@ using namespace std;
         string temp;
         ifstream currentFile;
         currentFile.open(wd);
-        //currentFile.open("test.txt");
-        while(currentFile) {   //---------------ASK - why this inputs the last word twice? or does it?
+
+        while(currentFile) {
             currentFile >> temp;
             replaceCaps(temp);
             rmNonAscii(temp);
@@ -58,8 +58,6 @@ using namespace std;
                 currentChunk += (*(it + j));
             }
             chunks.push_back(currentChunk);
-            //hashNode* temp = new hashNode{i, NULL};
-            //hashTable[i] = temp;
             currentChunk = "";
         }
     }

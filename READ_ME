@@ -1,0 +1,26 @@
+READ_ME
+
+To run this software, first ensure that all of the below files are present and in the same directory. This should be the case after properly unzipping cheaters_CBH925.zip.
+
+Files:
+
+Output.cpp
+Output.h
+getFileNames.cpp
+getFileNames.h
+FileChunks.cpp
+FileChunks.h
+plagiarismCatcher.cpp
+plagiarismCatcher.h
+makefile
+READ_ME
+
+Open a terminal. If on a UT server such as Kamek, first type in 'module load gcc'.
+Then type in 'make'.
+To run the program, type ./plagiarismCatcher 'path_to_directory_of_files' number_of_words_per_chunk number_of_shared_chunks
+Do not include a '/' at the end of the path to the directory. Words per chunk decides how many words are in the compared piece of each file. Choose a number between 2 and 10. 6 generally produces good results, if you select much lower it may catch common word combinations rather than plagiarism.
+
+The output gives, in descending order, the number of collisions (shared pieces of consecutive words between the two files), and then the two file names that were compared. Any number over 100 means that there is a good chance that pieces were copied or reused between the two files.
+
+
+

@@ -41,11 +41,9 @@ private:
     string currentChunk;
     string fileName;
     int fileIdx;
-    //string fileString;
     void replaceCaps(string &currentWord);
     void rmNonAscii(string &currentWord);
-    //int openFile(string fileName);
-    //int makeFileString(string &fileString);
+    //This is the meat of the class. It makes the chunks and stores them in a vector, to be accessed and used by main program
     void makeChunks(int i, int n);
 
 

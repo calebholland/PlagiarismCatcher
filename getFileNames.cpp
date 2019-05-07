@@ -11,7 +11,7 @@
 
 using namespace std;
 
-/*function... might want it in some class?*/
+
 int getdir (string dir, vector<string> &files)
 {
     DIR *dp;
@@ -27,18 +27,3 @@ int getdir (string dir, vector<string> &files)
     closedir(dp);
     return 0;
 }
-/*
-int main()
-{
-    string dir = string("sm_doc_set");
-    vector<string> files = vector<string>();
-
-    getdir(dir,files);
-
-    for (unsigned int i = 0;i < files.size();i++) {
-        cout << i << files[i] << endl;
-    }
-    return 0;
-}
-
-*/

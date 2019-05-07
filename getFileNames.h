@@ -16,5 +16,6 @@
 
 using namespace std;
 
-
+//creates the files vector which will be used to make the chunks of each file and then print out the
+// file name from the index at the end of the program
 int getdir (string dir, vector<string> &files);
