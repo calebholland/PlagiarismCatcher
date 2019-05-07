@@ -12,26 +12,29 @@ using namespace std;
 int main(int argc, char *argv[]) {
 
 
-// Take command line arguments to run program
+    // Take command line arguments to run program
     char dir[300] = {0};
     strcpy(dir,argv[1]);
     const int n = atoi(argv[2]);
     const int similarities = atoi(argv[3]);
 
-
+    //create files vector and use the getdir function to create the file vector
     vector<string> files = vector<string>();
 
     getdir(dir, files);
 
     removeCurrParentDirecs(files);
 
+    //This is the vector of FileChunks objects
     vector<FileChunks> allChunkedVec;
 
+    //Structure for the linked list nodes at each used entry in hash table
     struct hashNode{
         int fileIdx;
         hashNode* next;
     };
 
+    //Large hash table creates less false positives, especially with the larger document sets
     const long hashArrSize = 1000000;
     hashNode* hashTable[hashArrSize] = {NULL};
 
@@ -104,22 +107,24 @@ int main(int argc, char *argv[]) {
         }
     }
 
-
+    //call the function to output the number of collisions and plagiarists
     outPut(twoDArray, similarities, files);
 
-
+    //Clean up the dynamically allocated array to prevent memory leaks
     delete[] twoDArray;
-
 
     return 0;
 }
 
+//If the 2D array has equal or more collisions than the minimum specified, create an Output object with the two filenames and
+//the number of chunk collisions and add it to the output vector. Then, print the output vector in descending order,
+//deleting objects after it prints them
 void outPut(int * &twoDArray, int similarities, vector <string> &files){
     vector <Output> outVec;
 
     for(int i = 0; i < files.size() ; i++){
         for( int j = 0; j <files.size() ; j++){
-            if(twoDArray[idx2D(i, j, files)]> similarities){
+            if(twoDArray[idx2D(i, j, files)]>= similarities){
                 outVec.push_back( Output( twoDArray[idx2D(i, j, files)], files[i], files[j]));
             }
         }
@@ -140,7 +145,7 @@ void outPut(int * &twoDArray, int similarities, vector <string> &files){
     }
 }
 
-
+//Loop to remove . .. and DS_Store
 void removeCurrParentDirecs( vector <string> &files){
     for (vector<string>::iterator it = files.begin(); it != files.end(); it++) {
         if ((*it) == "." || (*it) == ".." || (*it) == ".DS_Store") {
@@ -174,126 +179,4 @@ unsigned long hashing(string hashChunk){
     }
     hash = hash%mod;
     return hash;
-
 }
-
-
-
-
-
-
-/*
-    for (vector<Output>::iterator it = outVec.begin(); it != (outVec.end()); it++) {
-        cout << (*it).getCollisions() << ": " << (*it).getFile1() << ", " << (*it).getFile2() << endl;
-    }
-
-    cout <<endl <<endl<<endl;
-    */
-
-/*
-for(int i = 0; i < (files.size())*(files.size()); i++){
-    cout << twoDArray[i] << endl;
-}
-int sizex= files.size();
-
-*/
-
-
-
-
-/*
-    for(int i = 0; i < files.size() ; i++){
-        for( int j = 0; j <files.size() ; j++){
-            if(twoDArray[idx2D(i, j, files)]> similarities){
-                cout << twoDArray[idx2D(i, j, files)] << ": " << files[i] << ", " << files[j] << endl;
-            }
-        }
-    }
-
-*/
-
-
-//hashTable[tempIdx] = temp;
-//tempIdx++;
-
-//const int fileArrSize = files.size() -1;
-
-//int twoDArray[25][25] = {0};
-
-//int ** twoDArray = new int*[files.size() -1];
-//for(int i = 0; i < files.size() -1; i++){
-//    twoDArray[i] = new int[files.size() -1];
-//}
-
-
-//hashNode* temp = new hashNode{i, NULL};
-//hashTable[i] = temp;
-//int tempIdx = 0;
-//int fileIdx = 0;
-
-
-
-/*
-    for (unsigned int i = 0; i < files.size(); i++) {
-       // cout << i << " " << files[i] << endl;
-    }
-*/
-//    cout<< files[0] <<endl;
-
-
-
-/*
-
-    outVec.push_back(Output(23, "ajslkfdj", "jkljaklj"));
-    outVec.push_back(Output(3, "ajslkfdj", "jkljaklj"));
-    outVec.push_back(Output(40, "ajslkfdj", "jkljaklj"));
-
-    for(int i = 0; i< 3; i++){
-        cout << outVec[i].getCollisions() << ": " << outVec[i].getFile1() << ", " << outVec[i].getFile2() << endl;
-    }
-
-    */
-
-
-//sort(outVec, outVec.size()/*, greater<Output>()*/);
-
-
-
-
-
-
-
-
-
-/*
-for (vector<FileChunks>::iterator it = allChunkedVec.begin(); it != (allChunkedVec.end()); it++) {
-    (*it).outChunksVec();
-    cout << endl <<"-------------------------------------------------------------------------" <<endl<<endl;
-}
-*/
-//    FileChunks chunk1 = FileChunks(dir, files[0], n);
-//    chunk1.outWordsVec();
-//    cout << endl <<endl;
-//    chunk1.outChunksVec();
-
-//    vector<string> chunk2 = chunk1.getChunksRef();
-//    chunk2.push_back("4523789");
-
-//for (vector<string>::const_iterator it = files.begin(); it != (files.end()); it++) {
-//allChunkedVec.push_back(FileChunks(dir, *it, i, n));
-
-//else /*if(hashTable[hashed]->fileIdx != tempNode->fileIdx)*/{
-
-//twoDArray[lTempPtr->fileIdx][rTempPtr->fileIdx] ++;
-
-//void makeHashTable(vector<FileChunks> &allChunkedVec, , )
-
-//void make2DArray(int * &twoDArray, )
-
-
-//Change the below to use argv(s)
-/*
-const int n = 6;
-string dir = string("big_doc_set");
-const int similarities = 200;
- */

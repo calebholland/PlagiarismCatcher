@@ -21,6 +21,7 @@ class FileChunks {
 public:
 
     FileChunks();
+    //Constructor that makes the object, calling all necessary functions to have the vector of chunks.
     FileChunks(string direcName, string fileName, int i, int n);
 
     void outWordsVec();
@@ -41,7 +42,9 @@ private:
     string currentChunk;
     string fileName;
     int fileIdx;
+    //Replace the capital letters with lowercase
     void replaceCaps(string &currentWord);
+    //remove all non-lowercase character ascii values after changing capitals to lowercase
     void rmNonAscii(string &currentWord);
     //This is the meat of the class. It makes the chunks and stores them in a vector, to be accessed and used by main program
     void makeChunks(int i, int n);
